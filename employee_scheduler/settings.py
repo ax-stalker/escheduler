@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+
+# changes
+import dj_database_url
+
 import os
 
 
@@ -97,16 +101,29 @@ WSGI_APPLICATION = 'employee_scheduler.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'employee_scheduler_db',
-        'USER': 'employeeX',
-        'PASSWORD': 'pass1234',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'employee_scheduler_db',
+#         'USER': 'employeex',
+#         'PASSWORD': 'pass1234',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
+
+
+# changes
+
+DATABASES ={
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
