@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-t#fsp^ej)!9!p#fikg=%_t6woq%=^s08x7!wm9iflfv_^oe4es
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_REDIRECT_URL = 'dashboard'  
 LOGOUT_REDIRECT_URL = 'login'    
